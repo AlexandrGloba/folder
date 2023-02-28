@@ -29,21 +29,53 @@
 // [3, 7, 23, 12] -> 19
 
 // [-4, -6, 89, 6] -> 0
- int[] array = GetArray(10, -10, 10);
- Console.WriteLine($"В массиве [ {String.Join(" | ", array )} ]");
- int[] GetArray (int size, int minValue, int maxValue)
- {
-     int[]result = new int[size];
+//  int[] array = GetArray(10, -10, 10);
+//  Console.WriteLine($"В массиве [ {String.Join(" | ", array )} ]");
+//  int[] GetArray (int size, int minValue, int maxValue)
+//  {
+//      int[]result = new int[size];
+//      for (int i = 0; i < size; i++)
+//      {
+//          result [i] = new Random().Next(minValue, maxValue + 1);
+//      }
+//      return result;
+//  }
+// int count = 0;
+// for (int i = 1; i < array.Length; i+=2)
+//     {
+//    count = count+array[i];
+//     }
+
+//  Console.WriteLine($" {array.Length} чисел. Cумма элементов на нечётных позициях равна  {count}");
+
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+double[] array = GetArray(10, 0.0, 1.0);
+ Console.WriteLine($"В массиве [ {String.Join(" | ", array )} ]");//Вывод массива в консоль
+
+double[] GetArray (int size, double minValue, double maxValue)
+{
+         double[]result = new double[size];
      for (int i = 0; i < size; i++)
      {
-         result [i] = new Random().Next(minValue, maxValue + 1);
+         result [i] = new Random().NextDouble();
      }
      return result;
- }
-int count = 0;
-for (int i = 1; i < array.Length; i+=2)
+}
+
+double max = 0;
+double min = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] > max)
     {
-   count = count+array[i];
+        max = array[i];
     }
 
- Console.WriteLine($" {array.Length} чисел. Cумма элементов на нечётных позициях равна  {count}");
+    if (array[i]< min)
+    {
+        min = array[i];
+    }
+}
+double difference = (max-min);
+Console.WriteLine($"Разница между максимальным и минимальным значением = {difference}");
