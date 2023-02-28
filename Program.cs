@@ -50,7 +50,7 @@
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-double[] array = GetArray(2, 0.0, 1.0);
+double[] array = GetArray(10, 0.0, 1.0);
  Console.WriteLine($"В массиве [ {String.Join(" | ", array )} ]");
 
 double[] GetArray (int size, double minValue, double maxValue)
