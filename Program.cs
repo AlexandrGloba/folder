@@ -50,32 +50,33 @@
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-double[] array = GetArray(10, 0.0, 1.0);
- Console.WriteLine($"В массиве [ {String.Join(" | ", array )} ]");//Вывод массива в консоль
+double[] array = GetArray(2, 0.0, 1.0);
+ Console.WriteLine($"В массиве [ {String.Join(" | ", array )} ]");
 
 double[] GetArray (int size, double minValue, double maxValue)
 {
-         double[]result = new double[size];
+         double []result = new double[size];
      for (int i = 0; i < size; i++)
      {
          result [i] = new Random().NextDouble();
      }
      return result;
 }
-
+// Определяю максимальное и минимальное значение
 double max = 0;
 double min = 0;
 for (int i = 0; i < array.Length; i++)
 {
-    if (array[i] > max)
+    if ( array [i] > max)
     {
         max = array[i];
     }
 
-    if (array[i]< min)
+    else
     {
         min = array[i];
     }
 }
-double difference = (max-min);
-Console.WriteLine($"Разница между максимальным и минимальным значением = {difference}");
+Console.WriteLine($"Минимальное значение {min}");
+Console.WriteLine($"Максимальное значение {max}");
+Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
